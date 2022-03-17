@@ -9,16 +9,14 @@ export default function ThemeSwitcher() {
   // When mounted on client, now we can show the UI
   useEffect(() => {
     setMounted(true);
+    const themes = JSON.parse(window.localStorage.getItem(themes));
   }, []);
-
-  const themes = JSON.parse(window.localStorage.getItem(themes));
-
-  console.log(themes);
 
   if (!mounted || !themes) return null;
 
   return (
     <div>
+      {console.log(themes)}
       {themes.map((e, i) => {
         return (
           <>
