@@ -21,12 +21,14 @@ export default function ThemeSwitcher() {
       {themes.map((e, i) => {
         return (
           <>
-            {console.log(e.colors)}
+            {console.log(e)}
             <Button
+              ghost
               size="sm"
               onClick={() => setTheme(e.className)}
               css={{
-                background: e.colors.primary.value,
+                borderColor: e.colors.primary.value,
+                color: e.colors.primary.value,
               }}
             >
               {e.className}

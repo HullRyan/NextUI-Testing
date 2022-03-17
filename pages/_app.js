@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import '../styles/globals.css';
 
 const lightTheme = createTheme({
+  name: 'Light',
   type: 'light',
   className: 'light',
   theme: {
@@ -16,6 +17,7 @@ const lightTheme = createTheme({
 });
 
 const darkTheme = createTheme({
+  name: 'Dark',
   type: 'dark',
   className: 'dark',
   theme: {
@@ -26,6 +28,7 @@ const darkTheme = createTheme({
 });
 
 const darkModernTheme = createTheme({
+  name: 'Dark Modern',
   type: 'dark',
   className: 'darkModern',
   theme: {
@@ -38,11 +41,12 @@ const darkModernTheme = createTheme({
 });
 
 const darkElegantTheme = createTheme({
+  name: 'Dark Elegant',
   type: 'dark',
   className: 'darkElegant',
   theme: {
     colors: {
-      primary: '#ffffff',
+      primary: '#222222',
       primaryLight: '#222222',
       success: '#a2a2a2',
     },
@@ -53,6 +57,7 @@ const darkElegantTheme = createTheme({
 });
 
 const darkRetroTheme = createTheme({
+  name: 'Dark Retro',
   type: 'dark',
   className: 'darkRetro',
   theme: {
@@ -73,7 +78,6 @@ const themes = [
 ];
 
 function MyApp({ Component, pageProps }) {
-  
   useEffect(() => {
     window.localStorage.setItem('themes', JSON.stringify(themes));
   }, []);
