@@ -1,9 +1,15 @@
 import { useTheme as useNextTheme } from 'next-themes';
-import { Switch, useTheme } from '@nextui-org/react';
+import { useTheme } from '@nextui-org/react';
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useNextTheme();
-  const { isDark, type } = useTheme();
+  const { themes } = useNextTheme();
 
-  return <>Test</>;
+  return (
+    <div>
+      {themes.map((e, i) => {
+        return <div onClick={() => setTheme(e)}>{e}</div>;
+      })}
+    </div>
+  );
 }
