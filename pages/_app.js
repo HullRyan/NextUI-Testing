@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 
 import '../styles/globals.css';
 
-// 2. Call `createTheme` and pass your custom values
 const lightTheme = createTheme({
   type: 'light',
   className: 'light',
@@ -22,14 +21,13 @@ const darkTheme = createTheme({
   theme: {
     colors: {
       primary: '#0070f3',
-      background: '#111111',
     },
   },
 });
 
 const darkModernTheme = createTheme({
   type: 'dark',
-  className: 'dark-modern',
+  className: 'darkModern',
   theme: {
     colors: {
       primary: '#7928CA',
@@ -41,7 +39,7 @@ const darkModernTheme = createTheme({
 
 const darkElegantTheme = createTheme({
   type: 'dark',
-  className: 'dark-elegant',
+  className: 'darkElegant',
   theme: {
     colors: {
       primary: '#ffffff',
@@ -56,7 +54,7 @@ const darkElegantTheme = createTheme({
 
 const darkRetroTheme = createTheme({
   type: 'dark',
-  className: 'dark-retro',
+  className: 'darkRetro',
   theme: {
     colors: {
       primary: '#FFD34E',
@@ -75,6 +73,7 @@ const themes = [
 ];
 
 function MyApp({ Component, pageProps }) {
+  
   useEffect(() => {
     window.localStorage.setItem('themes', JSON.stringify(themes));
   }, []);
@@ -88,7 +87,7 @@ function MyApp({ Component, pageProps }) {
         light: lightTheme.className,
         dark: darkTheme.className,
         darkModern: darkModernTheme.className,
-        darkElegant: darkTheme.className,
+        darkElegant: darkElegantTheme.className,
         darkRetro: darkRetroTheme.className,
       }}
     >

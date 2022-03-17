@@ -17,11 +17,18 @@ export default function ThemeSwitcher() {
 
   return (
     <div>
+      {theme}
       {themes.map((e, i) => {
         return (
           <>
-            {console.log(e)}
-            <Button size="sm" bordered ghost css={{}}>
+            {console.log(e.colors)}
+            <Button
+              size="sm"
+              onClick={() => setTheme(e.className)}
+              css={{
+                background: e.colors.primary.value,
+              }}
+            >
               {e.className}
             </Button>
           </>
