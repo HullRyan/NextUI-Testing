@@ -6,16 +6,10 @@ import '../styles/globals.css';
 // 2. Call `createTheme` and pass your custom values
 const lightTheme = createTheme({
   type: 'light',
-  theme: {
-    //colors: {...}, // optional
-  },
 });
 
 const darkTheme = createTheme({
   type: 'dark',
-  theme: {
-    //colors: {...}, // optional
-  },
 });
 
 const darkModernTheme = createTheme({
