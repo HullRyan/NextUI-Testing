@@ -17,27 +17,47 @@ export default function ThemeSwitcher() {
 
   return (
     <div>
-      {theme}
       {themes.map((e, i) => {
         return (
-          <>
-            {console.log(e)}
-            <Button
-              ghost
-              size="sm"
-              onClick={() => setTheme(e.className)}
-              css={{
-                borderColor: e.colors.primary.value,
-                color: e.colors.primary.value,
-              }}
-            >
-              {e.className}
-            </Button>
-          </>
+          <Button.Group>
+            {theme == e.className ? (
+              <Button
+                key={i}
+                onClick={() => setTheme(e.className)}
+                css={{
+                  //borderColor: e.colors.primary.value,
+                  //color: e.colors.primary.value,
+                  background: e.colors.primary.value,
+                }}
+              >
+                {e.colors.name.value}
+              </Button>
+            ) : (
+              <Button.Group>
+                <Button
+                  key={i}
+                  ghost
+                  onClick={() => setTheme(e.className)}
+                  css={{
+                    borderColor: e.colors.primary.value,
+                    color: e.colors.primary.value,
+                    '&:hover': {
+                      background: e.colors.primary.value,
+                    },
+                  }}
+                >
+                  {e.colors.name.value}
+                </Button>
+              </Button.Group>
+            )}
+          </Button.Group>
         );
       })}
+      <Button.Group>
+        <Button>test</Button>
+        <Button>test</Button>
+        <Button>test</Button>
+      </Button.Group>
     </div>
   );
 }
-
-//onClick={() => setTheme(e)}
