@@ -22,7 +22,6 @@ export default function Home() {
         alignItems="center"
         style={{ height: '100vh' }}
       >
-        <ThemeSwitcher />
         <Spacer />
         <Image src="/logo.svg" alt="Vercel Logo" width={200} height={200} />
         <Spacer />

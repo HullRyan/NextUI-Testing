@@ -13,7 +13,7 @@ const lightTheme = createTheme({
       primary: '#0070f3',
       background: '#ffffff',
       gradient:
-        'linear-gradient(310deg,hsl(240deg 100% 20%)0%,hsl(298deg 100% 21%) 24%,hsl(324deg 100% 32%) 35%,(336deg 100% 42%) 45%,hsl(0deg 93% 61%) 55%,hsl(24deg 100% 57%) 65%,hsl(42deg 100% 50%) 76%,hsl(55deg 10050%) 100%)',
+        'linear-gradient(310deg,hsl(239deg 100% 51%) 0%,hsl(257deg 99% 50%) 39%,hsl(264deg 100% 50%) 61%,hsl(270deg 100% 50%) 100%)',
     },
   },
 });
@@ -25,8 +25,14 @@ const darkTheme = createTheme({
     colors: {
       name: 'Dark',
       primary: '#0070f3',
-      gradient:
-        'linear-gradient(130deg,hsl(240deg 100% 20%) 0%,hsl(298deg 100% 21%) 24%,hsl(324deg 100% 32%) 35%,hsl(336deg 100% 42%) 45%,hsl(0deg 93% 61%) 55%,hsl(24deg 100% 57%) 65%,hsl(42deg 100% 50%) 76%,hsl(55deg 100% 50%) 100%)',
+      gradient: `
+      linear-gradient(
+        100deg,
+        hsl(239deg 100% 51%) 0%,
+        hsl(257deg 99% 50%) 39%,
+        hsl(264deg 100% 50%) 61%,
+        hsl(270deg 100% 50%) 100%
+      )`,
     },
   },
 });
