@@ -11,22 +11,22 @@ export default function Navbar() {
   }
 
   return (
-    <div class="topnav" id="myTopnav">
-      <a href="#home" class="active">
+    <div className="topnav" id="myTopnav">
+      <a href="#home" className="active">
         Home
       </a>
       <a href="#news">News</a>
       <a href="#contact">Contact</a>
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
+      <div className="dropdown">
+        <button className="dropbtn">Dropdown</button>
+        <div className="dropdown-content">
           <a href="#">Link 1</a>
           <a href="#">Link 2</a>
           <a href="#">Link 3</a>
         </div>
       </div>
       <a href="#about">About</a>
-      <a href="javascript:void(0);" class="icon" onclick='switchNav()'>
+      <a href="javascript:void(0);" className="icon" onclick="switchNav()">
         &#9776;
       </a>
       <style jsx>
