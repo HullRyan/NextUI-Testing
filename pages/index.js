@@ -9,7 +9,7 @@ import {
   Text,
   Link,
 } from '@nextui-org/react';
-import ThemeSwitcher from '../components/ThemeSwitcher/ThemeSwitcher';
+import ThemeSwitcher from '../components/ThemeSwitcher';
 
 export default function Home() {
   return (
