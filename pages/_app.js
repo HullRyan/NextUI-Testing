@@ -1,5 +1,6 @@
 import { createTheme, NextUIProvider } from '@nextui-org/react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { useEffect } from 'react';
 
 import '../styles/globals.css';
 
@@ -51,7 +52,19 @@ const darkRetroTheme = createTheme({
   },
 });
 
+const themes = [
+  lightTheme,
+  darkTheme,
+  darkElegantTheme,
+  darkModernTheme,
+  darkRetroTheme,
+];
+
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    window.localStorage.setItem('themes', JSON.stringify(themes));
+  }, []);
+
   return (
     <NextThemesProvider
       defaultTheme="system"

@@ -1,21 +1,30 @@
 import { useTheme as useNextTheme } from 'next-themes';
-import { useTheme } from '@nextui-org/react';
+import { Button, Spacer } from '@nextui-org/react';
 import { useState, useEffect } from 'react';
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useNextTheme();
-  const { themes } = useNextTheme();
 
   // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const themes = JSON.parse(window.localStorage.getItem(themes));
 
   if (!mounted) return null;
 
   return (
     <div>
       {themes.map((e, i) => {
-        return <div onClick={() => setTheme(e)}>{e}</div>;
+        return (
+          <>
+            <Button size="sm" bordered ghost onClick={() => setTheme(e)}>
+              {e}
+            </Button>
+          </>
+        );
       })}
     </div>
   );
