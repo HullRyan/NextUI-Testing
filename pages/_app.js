@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }) {
     <NextThemesProvider
       defaultTheme="system"
       attribute="class"
-      value={{
+      themes={{
         light: lightTheme.className,
         dark: darkTheme.className,
         darkModern: darkModernTheme.className,
