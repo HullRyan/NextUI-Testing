@@ -1,6 +1,6 @@
 import { useTheme as useNextTheme } from 'next-themes';
 import { Button, Spacer } from '@nextui-org/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -13,7 +13,9 @@ export default function ThemeSwitcher() {
 
   const themes = JSON.parse(window.localStorage.getItem(themes));
 
-  if (!mounted) return null;
+  console.log(themes);
+
+  if (!mounted || !themes) return null;
 
   return (
     <div>
