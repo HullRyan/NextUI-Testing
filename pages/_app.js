@@ -18,6 +18,45 @@ const darkTheme = createTheme({
   },
 });
 
+const darkModernTheme = createTheme({
+  type: 'dark',
+  className: 'dark-modern',
+  theme: {
+    colors: {
+      primary: '#7928CA',
+      primaryLight: '#582A87',
+      success: '#FF1CF7',
+    },
+  },
+});
+
+const darkElegantTheme = createTheme({
+  type: 'dark',
+  className: 'dark-elegant',
+  theme: {
+    colors: {
+      primary: '#ffffff',
+      primaryLight: '#222222',
+      success: '#a2a2a2',
+    },
+    radii: {
+      md: '4px',
+    },
+  },
+});
+
+const darkRetroTheme = createTheme({
+  type: 'dark',
+  className: 'dark-retro',
+  theme: {
+    colors: {
+      primary: '#FFD34E',
+      primaryLight: 'transparent',
+      error: '#EE457E',
+    },
+  },
+});
+
 function MyApp({ Component, pageProps }) {
   return (
     <NextThemesProvider
@@ -26,6 +65,9 @@ function MyApp({ Component, pageProps }) {
       value={{
         light: lightTheme.className,
         dark: darkTheme.className,
+        darkModern: darkModernTheme.className,
+        darkElegant: darkTheme.className,
+        darkRetro: darkRetroTheme.className,
       }}
     >
       <NextUIProvider>
