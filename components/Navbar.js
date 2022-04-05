@@ -1,6 +1,13 @@
 import Link from 'next/link';
+import { useMediaQuery } from 'react-responsive';
+import ThemeSwitcher from './ThemeSwitcher';
+import { useTheme } from '@nextui-org/react';
+import Components from './../pages/components';
 
 export default function Navbar() {
+
+  const { theme } = useTheme();
+
   function switchNav() {
     var x = document.getElementById('myTopnav');
     if (x.className === 'topnav') {
@@ -12,36 +19,35 @@ export default function Navbar() {
 
   return (
     <div className="topnav" id="myTopnav">
-      <a href="#home" className="active">
+      <Link href="/">
+      <a>
         Home
       </a>
-      <a href="#news">News</a>
+      </Link>
+      <Link href="/components">
+        <a>Components</a>
+      </Link>
       <a href="#contact">Contact</a>
       <div className="dropdown">
-        <button className="dropbtn">Dropdown</button>
+        <button className="dropbtn">Theme</button>
         <div className="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <ThemeSwitcher/>
         </div>
       </div>
       <a href="#about">About</a>
-      <a href="javascript:void(0);" className="icon" onclick="switchNav()">
+      <a href="javascript:void(0);" className="icon" onClick={switchNav}>
         &#9776;
       </a>
       <style jsx>
         {`
-        /* Add a black background color to the top navigation */
         .topnav {
-          background-color: #333;
           overflow: hidden;
         }
-        
-        /* Style the links inside the navigation bar */
+
         .topnav a {
           float: left;
           display: block;
-          color: #f2f2f2;
+          color: var(--nextui-color-text-primary);
           text-align: center;
           padding: 14px 16px;
           text-decoration: none;
@@ -50,8 +56,7 @@ export default function Navbar() {
         
         /* Add an active class to highlight the current page */
         .active {
-          background-color: #04AA6D;
-          color: white;
+          background-color: var(--nextui-colors-primary);
         }
         
         /* Hide the link that should open and close the topnav on small screens */
@@ -70,7 +75,7 @@ export default function Navbar() {
           font-size: 17px;
           border: none;
           outline: none;
-          color: white;
+          color: var(--nextui-color-text-primary);
           padding: 14px 16px;
           background-color: inherit;
           font-family: inherit;
@@ -81,9 +86,8 @@ export default function Navbar() {
         .dropdown-content {
           display: none;
           position: absolute;
-          background-color: #f9f9f9;
+          background-color: transparent;
           min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
           z-index: 1;
         }
         

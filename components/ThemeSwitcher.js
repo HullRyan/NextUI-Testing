@@ -19,10 +19,9 @@ export default function ThemeSwitcher() {
     <div className="flexGap">
       {themes.map((e, i) => {
         return (
-          <>
+          <div key={i}>
             {theme == e.className ? (
               <Button
-                key={i}
                 size="sm"
                 onClick={() => setTheme(e.className)}
                 css={{
@@ -33,7 +32,6 @@ export default function ThemeSwitcher() {
               </Button>
             ) : (
               <Button
-                key={i}
                 ghost
                 size="sm"
                 onClick={() => setTheme(e.className)}
@@ -48,7 +46,7 @@ export default function ThemeSwitcher() {
                 {e.colors.name.value}
               </Button>
             )}
-          </>
+          </div>
         );
       })}
       <style jsx>
